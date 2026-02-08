@@ -2,7 +2,7 @@
 import PageBanner from '@/components/PageBanner';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Calendar, ArrowRight, Clock } from 'lucide-react';
 import Link from 'next/link';
 
@@ -64,6 +64,7 @@ const blogPosts = [
 ];
 
 const Blogs = () => {
+  const [category, setCategory] = useState('All');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
